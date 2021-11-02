@@ -1,0 +1,118 @@
+ДЗ №1
+
+1. Посмотреть где я:
+$ pwd
+/d/cources/homework_1
+
+2. Создать папку:
+$ mkdir folder
+
+3. Зайти в папку:
+$ cd folder
+
+4. Создать 3 папки:
+$ mkdir f_1 f_2 f_3
+
+5. Зайти в любую папку:
+$ cd f_3
+
+6. Создать 5 файлов:
+$ touch file_1.txt
+
+$ touch file_2.txt
+
+$ touch file_3.txt
+
+$ touch file_4.json file_5.json
+
+7. Создать 3 папки:
+$ mkdir f_4 f_5 f_6
+
+8. Вывести список содержимого папки:
+$ ls
+f_4/  f_5/  f_6/  file_1.txt  file_2.txt  file_3.txt  file_4.json  file_5.json
+
+9,10,11. Открыть любой текстовый файл, написать туда текст, сохранить и выйти:
+$ vim file_1.txt
+   Ввод текста с помощи буквы "I", сохранение и выход :wq enter
+
+12. Выйти из папки на уровень выше:
+$ cd ..
+
+13. Переместить любые созданные 2 файла:
+$ mv f_3/file_1.txt f_1
+
+$ mv f_3/file_4.json f_1
+
+14. Скопировать любые созданные 2 файла:
+$ cp f_1/file_4.json f_2
+
+$ cp f_1/file_1.txt f_2
+
+15. Найти файл по имени:
+$ find -name "file_1.txt"
+./f_1/file_1.txt
+./f_2/file_1.txt
+
+16. Просмотреть содержимое в реальном времени:
+$ tail -f file_3.txt
+dfghh
+vbnmm
+dfghj
+dewqa
+Для выхода комбинация клавиш ctrl+c
+
+17. Вывести несколько первых строк текстового файла:
+$ head -n 3 file_3.txt
+dfghh
+vbnmm
+dfghj
+
+18. Вывести несколько последних строк текстового файла:
+$ tail -n 3 file_3.txt
+dfghj
+dewqa
+
+19. Просмотр содержимого жлинного файла:
+$ less file_3.txt
+Выход с помощью кнопки q
+
+20. Вывести дату и время:
+$ date
+Sat Oct 30 00:38:28     2021
+
+ДЗ *
+		
+	Отправить http запрос на сервер:
+
+1. Отправить запрос с помощью curl:
+$ curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   185  100   185    0     0   1627      0 --:--:-- --:--:-- --:--:--  1637{"age":"32","family":{"children":[["Alex",24],["Kate",12]],"pets":{"cat":{"age":3,"name":"Sunny"},"dog":{"age":4,"name":"Luky"}},"u_salary_1_5_year":4000},"name":"Vadim","salary":1000}
+
+
+	Написание скрипта:
+1. Создать файл с расширением .sh:
+$ touch script.sh
+
+2. Открыть файл script.sh:
+$ vim script.sh
+
+3.Войти в редактирование кнопкой I , прописать команды:
+	cd folder_1
+        mkdir f_1 f_2 f_3
+        cd f_2
+        touch f_1.txt f_2.txt f_3.txt f_4.json f_5.json
+        mkdir f_4 f_5 f_6
+        ls
+        mv f_1.txt f_4
+        mv f_5.json f_4
+ Выходим и сохраняем с помощью :wq
+
+4. Сделать файл исполняемым:
+$ chmod +x script.sh
+
+5. Выполняем файл:
+$ ./script.sh
+f_1.txt  f_2.txt  f_3.txt  f_4  f_4.json  f_5  f_5.json  f_6
