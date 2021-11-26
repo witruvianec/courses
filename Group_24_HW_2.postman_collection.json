@@ -509,11 +509,11 @@
 									"var jsonData = JSON.parse(responseBody);\r",
 									"console.log(jsonData)\r",
 									"\r",
-									"var person = jsonData.person;\r",
+									"var person = jsonData.person.u_name;\r",
 									"console.log(person)\r",
 									"\r",
-									"for (var i in person) {\r",
-									"    console.log(\"person =\", i);\r",
+									"for (var i of person) {\r",
+									"    console.log(\"person.u_name =\", i);\r",
 									"}"
 								],
 								"type": "text/javascript"
