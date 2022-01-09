@@ -1,0 +1,43 @@
+ADB
+
+PS C:\Users\witru> cd C:\Users\witru\adb
+
+Отобразить подключенный девайс в консоли:
+
+PS C:\Users\witru\adb> adb devices
+List of devices attached
+88d6c47ccbce    device
+
+Установить .apk файл приложения todolist на телефон с компьютера через ADB:
+
+PS C:\Users\witru\adb> adb install -t "D:\downloads\todo\001_ToDoList-master\app\build\outputs\apk\debug\app-debug.apk"
+2055 KB/s (3247994 bytes in 1.543s)
+Success
+
+Вывести адрес приложения todolist в системе Android:
+
+PS C:\Users\witru\adb> adb shell pm list packages todolist
+package:com.android.todolist
+PS C:\Users\witru\adb> adb shell pm path com.android.todolist
+package:/data/app/~~v-TSBFq7s_2iwQ_O5BHQgg==/com.android.todolist-UHSM4pHIgtwFpc9mLqTWjQ==/base.apk
+
+Сделать скриншот запущенного приложения todolist и сразу скопировать на компьютер в одной команде:
+
+PS C:\Users\witru\adb> adb shell screencap /storage/emulated/0/DCIM/screen_1.png; adb pull /storage/emulated/0/DCIM/screen_1.png /Users/witru/adb/screen_1.png
+3455 KB/s (27680 bytes in 0.007s)
+
+Вывести в консоль логи приложения todolist:
+
+PS C:\Users\witru\adb> adb logcat|select-string com.android.todolist
+Выйти из записи логов с помощью Ctrl+c
+
+Скопировать логи приложения todolist на компьютер:
+
+PS C:\Users\witru\adb> adb logcat|select-string com.android.todolist > log.txt
+Выйти из записи логов с помощью Ctrl+c
+
+Удалить приложение todolist с телефона через ADB:
+
+PS C:\Users\witru\adb> adb uninstall com.android.todolist
+Success
+PS C:\Users\witru\adb>
